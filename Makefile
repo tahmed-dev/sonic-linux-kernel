@@ -86,6 +86,7 @@ $(addprefix $(DEST)/, $(MAIN_TARGET)): $(DEST)/% :
 	cp -vr ../config.local ../patches-sonic debian/
 	if [[ -f debian/config.local/$(CONFIGURED_ARCH)/config.sonic-$(CONFIGURED_PLATFORM) ]]; then
 		cp debian/config.local/$(CONFIGURED_ARCH)/config.sonic-$(CONFIGURED_PLATFORM) debian/config.local/$(CONFIGURED_ARCH)/config.sonic-platform-specific
+		cat debian/config.local/$(CONFIGURED_ARCH)/config.sonic-platform-specific >> debian/config.local/$(CONFIGURED_ARCH)/config.sonic
 	fi
 
 	patch -p1 -i ../patches-debian/disable-secureboot-config-checks.patch
