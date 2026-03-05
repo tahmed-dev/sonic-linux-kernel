@@ -1,0 +1,5 @@
+# VPP platform kernel config
+# Enable VFIO noiommu mode for VPP DPDK in VMs without IOMMU
+CONFIG_VFIO_NOIOMMU=y
+# Enable virtio-specific VFIO PCI driver for better virtio link state support
+CONFIG_VIRTIO_VFIO_PCI=m
